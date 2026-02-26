@@ -4,7 +4,7 @@ import LoginHero from "./LoginHero";
 const LoginPage = () => {
   return (
     <div>
-      Login Page
+      <h2 className="text-red-500 font-bold text-4xl">Login Page</h2>
       <LoginHero />
       <LoginForm />
     </div>

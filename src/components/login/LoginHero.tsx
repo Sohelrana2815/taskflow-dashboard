@@ -8,3 +8,5 @@ const LoginHero = () => {
 };
 
 export default LoginHero;
+
+// pnpm add
