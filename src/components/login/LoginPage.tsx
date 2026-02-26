@@ -3,14 +3,16 @@ import LoginHero from "./LoginHero";
 
 const LoginPage = () => {
   return (
-    <div className="flex items-center">
-      {" "}
-      {/*and it will use flex as my design pattern like left side hero content and right side login form*/}
-      {/* Need to give 40 % width for Login hero */}
-      <h2 className="text-red-500 font-bold text-4xl">Login Page</h2>
-      <LoginHero />
-      {/* Need to give 60% width for Login form */}
-      <LoginForm />
+    <div className="flex min-h-screen w-full">
+      {/* বাম পাশ - Hero Section (40% Width) */}
+      <div className="hidden lg:flex lg:w-[40%] bg-[#12372A]">
+        <LoginHero />
+      </div>
+
+      {/* ডান পাশ - Form Section (60% Width) */}
+      <div className="flex w-full lg:w-[60%] items-center justify-center bg-white p-8">
+        <LoginForm />
+      </div>
     </div>
   );
 };
