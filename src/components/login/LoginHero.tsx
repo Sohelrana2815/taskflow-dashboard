@@ -48,8 +48,8 @@ const LoginHero = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-500">© 2024 Donezo Inc.</p>
-        <p className="text-sm text-gray-500"> Privacy Terms Help</p>
+        <p className="text-sm text-gray-300">© 2024 Donezo Inc.</p>
+        <p className="text-sm text-gray-300"> Privacy Terms Help</p>
       </div>
     </div>
   );
