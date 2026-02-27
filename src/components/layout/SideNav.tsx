@@ -9,8 +9,8 @@ import {
   Settings,
   HelpCircle,
   LogOut,
-  Smartphone,
-  Download,
+  Shell,
+  Award,
 } from "lucide-react";
 
 // Menu items for the main navigation
@@ -55,26 +55,13 @@ const SideNav = ({ onClose }: SideNavProps) => {
   const [activeItem, setActiveItem] = useState("Dashboard");
 
   return (
-    <div className="flex flex-col h-full justify-between">
+    <div className="flex flex-col h-full justify-between bg-[#F8F9FA] rounded-xl p-2 xl:p-4">
       {/* Logo */}
 
       <div>
         <div className="flex items-center gap-2.5 mb-10">
-          <div className="w-9 h-9 bg-[#1B4332] rounded-full flex items-center justify-center">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
+          <div className="w-9 h-9 text-1B4332 rounded-full flex items-center justify-center">
+            <Shell size={50} strokeWidth={1.8} />
           </div>
 
           <h1 className="text-xl font-bold text-[#1B4332] tracking-tight">
@@ -124,8 +111,8 @@ const SideNav = ({ onClose }: SideNavProps) => {
                   {/* Notification dot for Tasks */}
 
                   {item.hasNotification && (
-                    <span className="ml-auto w-5 h-5 bg-[#E8F5E9] text-[#2E7D32] text-[10px] font-bold rounded-full flex items-center justify-center">
-                      !
+                    <span className="ml-auto w-5 h-5 bg-[#1B4332] text-[#FFFFFF] text-[10px] font-bold rounded-sm flex items-center justify-center">
+                      12+
                     </span>
                   )}
                 </button>
@@ -167,21 +154,21 @@ const SideNav = ({ onClose }: SideNavProps) => {
 
       {/* Mobile App download card */}
 
-      <div className="bg-[#12372A] p-5 rounded-2xl text-white mt-6">
-        <div className="flex items-center gap-2 mb-2">
-          <Smartphone size={16} className="opacity-80" />
-
-          <p className="text-xs font-semibold opacity-90">Download our</p>
+      <div className="bg-[#12372A] p-4 rounded-2xl text-white mt-6">
+        <div className="bg-[#F8F9FA] w-8 h-8 rounded-full flex items-center justify-center mb-2 text-[#12372A]">
+          <Award size={26} className="opacity-80" />
         </div>
-
-        <p className="text-sm font-bold mb-1">Mobile App</p>
+        <div className="flex items-center gap-2 mb-2">
+          <p className="font-bold">
+            Download our <span className="block font-normal"> Mobile App</span>
+          </p>
+        </div>
 
         <p className="text-[11px] text-white/60 mb-4">
           Get easy in another way
         </p>
 
-        <button className="w-full flex items-center justify-center gap-2 bg-[#2E7D32] hover:bg-[#3E8E41] py-2.5 rounded-xl text-xs font-semibold transition-colors duration-200">
-          <Download size={14} />
+        <button className="w-full flex items-center justify-center gap-2 bg-[#1B4332] hover:bg-[#12372A] py-2.5 rounded-full text-xs font-semibold transition-colors duration-200 cursor-pointer">
           Download
         </button>
       </div>

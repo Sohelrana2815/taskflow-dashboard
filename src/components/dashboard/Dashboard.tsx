@@ -21,7 +21,7 @@ const Dashboard = () => {
   const { data, isLoading, error } = useDashboardData();
 
   return (
-    <div className="flex h-screen bg-[#F8F9FA] overflow-hidden">
+    <div className="flex h-screen overflow-hidden">
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
@@ -34,7 +34,8 @@ const Dashboard = () => {
       <aside
         className={`
           fixed lg:static inset-y-0 left-0 z-50
-          w-64 bg-white border-r border-gray-200 p-5
+           bg-white p-4
+           w-full max-w-xs
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
           lg:translate-x-0 lg:block
@@ -47,7 +48,7 @@ const Dashboard = () => {
       {/* Main content area */}
       <main className="flex-1 flex flex-col h-full overflow-hidden">
         {/* Header */}
-        <div className="px-4 sm:px-6 pt-2 sm:pt-4">
+        <div className="pr-4 sm:pr-6 pt-2 sm:pt-4">
           <Header
             onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
             isSidebarOpen={sidebarOpen}
@@ -55,7 +56,7 @@ const Dashboard = () => {
         </div>
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto dashboard-scroll px-4 sm:px-6 pb-6">
+        <div className="flex-1 overflow-y-auto dashboard-scroll px-4 sm:px-6 pb-6 mt-4 bg-[#F8F9FA] rounded-xl">
           {/* Dashboard title + action buttons */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-6 mb-8 gap-4">
             <div>
@@ -81,14 +82,14 @@ const Dashboard = () => {
 
           {/* Dashboard grid — STRICT 3 ROW responsive layout */}
           {isLoading ? (
-            <div className="flex-1 flex flex-col items-center justify-center min-h-[400px]">
+            <div className="flex-1 flex flex-col items-center justify-center min-h-100">
               <Loader2 className="h-10 w-10 text-[#1B4332] animate-spin mb-4" />
               <p className="text-gray-500 font-medium tracking-wide animate-pulse">
                 Loading dashboard data...
               </p>
             </div>
           ) : error ? (
-            <div className="flex-1 flex flex-col items-center justify-center min-h-[400px] text-red-500">
+            <div className="flex-1 flex flex-col items-center justify-center min-h-100 text-red-500">
               <AlertCircle className="h-12 w-12 mb-3 opacity-80" />
               <p className="font-semibold text-lg">Error loading data</p>
               <p className="text-sm opacity-80">{error}</p>

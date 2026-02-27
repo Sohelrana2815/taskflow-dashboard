@@ -1,4 +1,3 @@
-
 import { Search, Mail, Bell, Menu } from "lucide-react";
 
 interface HeaderProps {
@@ -8,7 +7,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
   return (
-    <header className="flex items-center justify-between w-full h-20 px-2">
+    <header className="flex items-center justify-between w-full h-20 px-2 bg-[#F8F9FA] rounded-xl">
       {/* Left section: Hamburger (Mobile) + Search */}
       <div className="flex items-center gap-4 flex-1">
         <button
@@ -37,7 +36,6 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
 
       {/* Right section: Actions + Profile */}
       <div className="flex items-center gap-3 sm:gap-5 justify-end">
-
         {/* Mobile Search Icon (only shows when input is hidden) */}
         <button className="sm:hidden w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors bg-white">
           <Search size={18} />
