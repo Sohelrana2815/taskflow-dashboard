@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Upload, Loader2, AlertCircle } from "lucide-react";
+import { Plus, Loader2, AlertCircle } from "lucide-react";
 
 import Header from "../layout/Header";
 import SideNav from "../layout/SideNav";
@@ -60,21 +60,20 @@ const Dashboard = () => {
           {/* Dashboard title + action buttons */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-6 mb-8 gap-4">
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+              <h1 className="text-3xl font-Inter  sm:text-4xl font-semibold text-gray-900 tracking-tight">
                 Dashboard
               </h1>
-              <p className="text-sm font-medium text-gray-500 mt-2">
+              <p className="text-base font-medium text-gray-500 mt-2">
                 Plan, prioritize, and accomplish your tasks with ease.
               </p>
             </div>
 
             <div className="flex items-center gap-3">
-              <button className="flex items-center justify-center gap-2 bg-[#1B4332] hover:bg-[#2E7D32] text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors cursor-pointer hover:shadow-md">
+              <button className="flex items-center justify-center gap-2 bg-linear-to-b from-[#2D6A4F] to-[#1B4332] hover:from-[#1B4332] hover:to-[#081C15] text-white py-2 px-4 xl:px-5 xl:py-3 rounded-full text-xs xl:text-sm font-semibold transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg active:scale-95">
                 <Plus size={18} strokeWidth={2.5} />
                 Add Project
               </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 px-5 py-2.5 rounded-full text-sm font-semibold transition-colors cursor-pointer hover:shadow-sm">
-                <Upload size={16} strokeWidth={2.5} />
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 py-2 px-4 xl:px-5 xl:py-3 rounded-full text-sm font-semibold transition-colors cursor-pointer hover:shadow-sm">
                 Import Data
               </button>
             </div>

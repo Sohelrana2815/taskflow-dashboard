@@ -1,92 +1,88 @@
+import { MoveUpRight } from "lucide-react";
 import type { Overview } from "../../types/dashboard";
 
 interface StatCardsProps {
-    overview: Overview;
+  overview: Overview;
 }
 
 const StatCards = ({ overview }: StatCardsProps) => {
-    const statData = [
-        {
-            title: "Total Users",
-            value: overview.totalUsers.toLocaleString(),
-            subtitle: "General metric",
-            accent: true,
-        },
-        {
-            title: "Active Users",
-            value: overview.activeUsers.toLocaleString(),
-            subtitle: "Currently online",
-            accent: false,
-        },
-        {
-            title: "Revenue",
-            value: `$${overview.revenue.toLocaleString()}`,
-            subtitle: "Total earnings",
-            accent: false,
-        },
-        {
-            title: "Growth",
-            value: `${overview.growth}%`,
-            subtitle: "Month over month",
-            accent: false,
-        },
-    ];
+  const statData = [
+    {
+      title: "Total Users",
+      value: overview.totalUsers.toLocaleString(),
+      subtitle: "General metric",
+      accent: true,
+    },
+    {
+      title: "Active Users",
+      value: overview.activeUsers.toLocaleString(),
+      subtitle: "Currently online",
+      accent: false,
+    },
+    {
+      title: "Revenue",
+      value: `$${overview.revenue.toLocaleString()}`,
+      subtitle: "Total earnings",
+      accent: false,
+    },
+    {
+      title: "Growth",
+      value: `${overview.growth}%`,
+      subtitle: "Month over month",
+      accent: false,
+    },
+  ];
 
-    return (
-        <>
-            {statData.map((stat, i) => (
-                <div
-                    key={i}
-                    className={`
-            xl:col-span-3 rounded-[24px] sm:rounded-[32px] border p-5 sm:p-6
-            flex flex-col justify-between min-h-[140px]
-            transition-shadow hover:shadow-md
-            ${stat.accent
-                            ? "bg-[#1B4332] text-white border-[#1B4332]"
-                            : "bg-white border-gray-200 text-gray-900"
-                        }
-          `}
-                >
-                    <div className="flex items-start justify-between">
-                        <p
-                            className={`text-sm font-medium ${stat.accent ? "text-white/80" : "text-gray-500"
-                                }`}
-                        >
-                            {stat.title}
-                        </p>
-                        <div
-                            className={`w-8 h-8 rounded-full flex items-center justify-center
-              ${stat.accent ? "bg-white/20" : "bg-gray-100"}`}
-                        >
-                            <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke={stat.accent ? "white" : "#6B7280"}
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <line x1="7" y1="17" x2="17" y2="7" />
-                                <polyline points="7 7 17 7 17 17" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <p className="text-3xl sm:text-4xl font-bold mt-2">{stat.value}</p>
-                        <p
-                            className={`text-xs mt-1 ${stat.accent ? "text-green-300" : "text-green-600"
-                                }`}
-                        >
-                            <span className="mr-1">↑</span>
-                            {stat.subtitle}
-                        </p>
-                    </div>
-                </div>
-            ))}
-        </>
-    );
+  return (
+    <>
+      {statData.map((stat, i) => (
+   <div
+  key={i}
+  className={`
+    xl:col-span-3 rounded-3xl sm:rounded-4xl border p-5 sm:p-6
+    flex flex-col justify-between min-h-35
+    transition-all duration-300 hover:shadow-xl hover:-translate-y-1
+    ${
+      stat.accent
+        ? "bg-linear-to-br from-[#2D6A4F] via-[#1B4332] to-[#081C15] text-white border-transparent"
+        : "bg-white border-gray-200 text-gray-900"
+    }
+  `}
+>
+  <div className="flex items-start justify-between">
+    <p
+      className={`text-base md:text-lg xl:text-xl font-bold ${
+        stat.accent ? "text-white/90" : "text-black"
+      }`}
+    >
+      {stat.title}
+    </p>
+    <div
+      className={`w-10 h-10 rounded-full flex items-center justify-center border transition-transform hover:rotate-45
+      ${stat.accent ? "bg-white/10 backdrop-blur-md border-white/20" : "bg-gray-50 border-gray-100"}`}
+    >
+      <MoveUpRight 
+        className={stat.accent ? "text-white" : "text-[#1B4332]"} 
+        size={20}  
+      />
+    </div>
+  </div>
+
+  <div>
+    <p className="text-4xl sm:text-5xl font-bold mt-2 tracking-tight">{stat.value}</p>
+    <p
+      className={`text-[11px] font-medium mt-1 flex items-center gap-1 ${
+        stat.accent ? "text-[#D8F3DC]" : "text-[#2D6A4F]" // Using the "yellowish" light green for the accent card subtitle
+      }`}
+    >
+      <span className="bg-white/20 px-1 rounded-sm text-[10px]">5+</span>
+      {stat.subtitle}
+    </p>
+  </div>
+</div>
+      ))}
+    </>
+  );
 };
 
 export default StatCards;

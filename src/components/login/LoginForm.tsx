@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import api from "../../lib/axios";
 import { useNavigate } from "react-router";
 import { BsGithub, BsGoogle } from "react-icons/bs";
-import { Eye, Lock, Mail } from "lucide-react";
+import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [showPassword, setShowPassword] = useState(false);
   const handleLogin = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     console.log("Email:", email);
@@ -70,7 +70,7 @@ const LoginForm = () => {
               />
             </div>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="w-full border border-gray-300 rounded-lg py-2.5 pl-10 pr-10 outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all placeholder:text-gray-400"
               placeholder="Enter your password"
               value={password}
@@ -78,15 +78,30 @@ const LoginForm = () => {
               required
             />
             {/* পাসওয়ার্ড হাইড/শো আইকন (ডান পাশে) */}
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
-              <Eye size={18} className="text-gray-400 hover:text-gray-600" />
+            <div
+              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer z-10"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <EyeOff
+                  size={18}
+                  className="text-[#1B4332] transition-colors"
+                />
+              ) : (
+                <Eye
+                  size={18}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                />
+              )}
             </div>
           </div>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-[#12372A] text-white font-bold py-3 rounded-lg hover:bg-opacity-95 transition-all shadow-sm cursor-pointer"
+          className="w-full bg-linear-to-b from-[#2D6A4F] to-[#1B4332] text-white font-bold py-3.5 rounded-xl 
+             transition-all duration-300 shadow-md hover:shadow-lg
+             active:scale-[0.98] cursor-pointer"
         >
           Sign In
         </button>
@@ -94,20 +109,34 @@ const LoginForm = () => {
 
       {/* সোশ্যাল লগইন অংশ */}
       <div className="mt-8 text-center">
-        <p className="text-sm text-gray-400 mb-4 uppercase">or continue with</p>
+        <div className="flex items-center my-6">
+          <div className="flex-1 border-t border-gray-200"></div>
+          <span className="px-4 text-[11px] font-semibold text-gray-400 uppercase tracking-widest">
+            or continue with
+          </span>
+          <div className="flex-1 border-t border-gray-200"></div>
+        </div>
+
         <div className="flex gap-4">
-          <button className="flex-1 border p-2 rounded-lg flex justify-center items-center gap-2">
-            <BsGoogle size={20} /> Google
+          <button
+            className="flex-1 border border-gray-200 p-3 rounded-xl flex justify-center items-center gap-2 
+                       hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700 cursor-pointer"
+          >
+            <BsGoogle size={18} /> Google
           </button>
-          <button className="flex-1 border p-2 rounded-lg flex justify-center items-center gap-2">
-            <BsGithub size={20} /> GitHub
+          <button
+            className="flex-1 border border-gray-200 p-3 rounded-xl flex justify-center items-center gap-2 
+                       hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700 cursor-pointer"
+          >
+            <BsGithub size={18} /> GitHub
           </button>
         </div>
-        <p className="mt-6 text-sm">
+
+        <p className="mt-8 text-sm text-gray-500">
           Don't have an account?{" "}
-          <span className="text-green-800 font-bold cursor-pointer">
+          <button className="text-[#1B4332] font-bold hover:underline cursor-pointer ml-1">
             Sign up
-          </span>
+          </button>
         </p>
       </div>
     </div>

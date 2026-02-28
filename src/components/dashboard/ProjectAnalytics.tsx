@@ -14,8 +14,8 @@ const ProjectAnalytics = ({ analytics }: ProjectAnalyticsProps) => {
   };
 
   return (
-    <div className="xl:col-span-6 bg-white rounded-[24px] sm:rounded-[32px] border border-gray-200 p-5 sm:p-6 min-h-[220px]">
-      <h3 className="text-base font-semibold text-gray-800 mb-4">
+    <div className="xl:col-span-6 bg-white rounded-3xl sm:rounded-4xl border border-gray-200 p-5 sm:p-6 min-h-55">
+      <h3 className="text-base  md:text-lg xl:text-xl font-bold text-gray-800 mb-4">
         Project Analytics
       </h3>
       {/* Chart placeholder — weekly bar chart */}
@@ -39,7 +39,7 @@ const ProjectAnalytics = ({ analytics }: ProjectAnalyticsProps) => {
                 <div
                   className={`w-full rounded-t-full rounded-b-md ${currentHeight > 50
                     ? "bg-[#1B4332]"
-                    : "bg-gray-100/50 [background-image:repeating-linear-gradient(45deg,transparent,transparent_2px,#d1d5db_2px,#d1d5db_4px)]"
+                    : "bg-gray-100/50 bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#d1d5db_2px,#d1d5db_4px)]"
                     }`}
                   style={{ height: `${Math.max(currentHeight, 20)}px` }} // Min height 20px
                 />
