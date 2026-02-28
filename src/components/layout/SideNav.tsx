@@ -154,21 +154,23 @@ const SideNav = ({ onClose }: SideNavProps) => {
 
       {/* Mobile App download card */}
 
-      <div className="bg-[#12372A] p-4 rounded-2xl text-white mt-6">
+      <div
+        className="p-4 rounded-2xl text-white mt-6 relative overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/ads.png')`,
+        }}
+      >
         <div className="bg-[#F8F9FA] w-8 h-8 rounded-full flex items-center justify-center mb-2 text-[#12372A]">
           <Award size={26} className="opacity-80" />
         </div>
         <div className="flex items-center gap-2 mb-2">
-          <p className="font-bold">
+          <p className="font-bold text-lg">
             Download our <span className="block font-normal"> Mobile App</span>
           </p>
         </div>
+        <p className="text-[11px] text-gray-50 mb-4">Get easy in another way</p>
 
-        <p className="text-[11px] text-white/60 mb-4">
-          Get easy in another way
-        </p>
-
-        <button className="w-full flex items-center justify-center gap-2 bg-[#1B4332] hover:bg-[#12372A] py-2.5 rounded-full text-xs font-semibold transition-colors duration-200 cursor-pointer">
+        <button className="w-full flex items-center justify-center gap-2 bg-[#1B4332] hover:bg-[#12372A] py-2.5 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer ">
           Download
         </button>
       </div>
