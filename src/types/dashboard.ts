@@ -1,3 +1,5 @@
+// Defining interfaces for dashboard data
+
 export interface Overview {
     totalUsers: number;
     activeUsers: number;

@@ -50,7 +50,6 @@ const LoginForm = () => {
             Email address
           </label>
           <div className="relative group">
-            {/* আইকন পজিশনিং: একদম বামে এবং মাঝখানে */}
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <Mail
                 size={18}
@@ -88,7 +87,7 @@ const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            {/* পাসওয়ার্ড হাইড/শো আইকন (ডান পাশে) */}
+            {/* Password Visibility Toggle */}
             <div
               className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer z-10"
               onClick={() => setShowPassword(!showPassword)}
@@ -119,7 +118,7 @@ const LoginForm = () => {
         </button>
       </form>
 
-      {/* সোশ্যাল লগইন অংশ */}
+      {/* Social Login */}
       <div className="mt-8 text-center">
         <div className="flex items-center my-6">
           <div className="flex-1 border-t border-gray-200"></div>

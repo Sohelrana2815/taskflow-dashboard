@@ -148,9 +148,7 @@ const SideNav = ({ onClose }: SideNavProps) => {
                   onClick={() => {
                     if (item.label === "Logout") {
                       localStorage.removeItem("token");
-                      toast.success("Logged out!", {
-                        description: "Redirecting to login page...",
-                      });
+                      toast.success("Logged out!");
                       setTimeout(() => {
                         navigate("/");
                       }, 1000);

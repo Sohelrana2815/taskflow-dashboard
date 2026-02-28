@@ -30,8 +30,7 @@ const ProjectProgress = () => {
             strokeLinecap="round"
           />
           {/* In Progress: 30% */}
-          {/* Note: The reference image actually shows a continuous curve where the completed section dominates. 
-           For simplicity of standard SVG strokes on the exact design, this approximates the arc style. */}
+        
         </svg>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center">

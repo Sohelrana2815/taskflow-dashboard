@@ -30,7 +30,7 @@ const LoginHero = () => {
           Join thousands of teams who use Donezo to streamline their workflow.
         </p>
 
-        {/* ফিচার কার্ডগুলো */}
+        {/* Feature cards */}
         <div className="space-y-4">
           {features.map((f, i) => (
             <div

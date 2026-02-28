@@ -5,6 +5,7 @@ interface ProjectListProps {
 }
 
 const ProjectList = ({ products }: ProjectListProps) => {
+  // Helper function to get product icon
   const getProductIcon = (index: number) => {
     const colors = [
       "bg-blue-500",

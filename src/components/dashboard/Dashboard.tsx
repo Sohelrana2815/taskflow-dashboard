@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Plus, Loader2, AlertCircle } from "lucide-react";
 
 import Header from "../layout/Header";
@@ -21,7 +22,12 @@ const Dashboard = () => {
   const { data, isLoading, error } = useDashboardData();
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex h-screen overflow-hidden"
+    >
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
@@ -46,7 +52,12 @@ const Dashboard = () => {
       </aside>
 
       {/* Main content area */}
-      <main className="flex-1 flex flex-col h-full overflow-hidden">
+      <motion.main
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+        className="flex-1 flex flex-col h-full overflow-hidden"
+      >
         {/* Header */}
         <div className="pr-4 sm:pr-6 pt-2 sm:pt-4">
           <Header
@@ -56,7 +67,12 @@ const Dashboard = () => {
         </div>
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto dashboard-scroll px-4 sm:px-6 pb-6 mt-4 bg-[#F8F9FA] rounded-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+          className="flex-1 overflow-y-auto dashboard-scroll px-4 sm:px-6 pb-6 mt-4 bg-[#F8F9FA] rounded-xl"
+        >
           {/* Dashboard title + action buttons */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-6 mb-8 gap-4">
             <div>
@@ -111,9 +127,9 @@ const Dashboard = () => {
               <TimeTracker />
             </div>
           ) : null}
-        </div>
-      </main>
-    </div>
+        </motion.div>
+      </motion.main>
+    </motion.div>
   );
 };
 
