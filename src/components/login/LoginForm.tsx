@@ -3,25 +3,36 @@ import api from "../../lib/axios";
 import { useNavigate } from "react-router";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { toast } from "sonner";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const handleLogin = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    setLoading(true);
     try {
       const res = await api.post("/login", { email, password });
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
-        navigate("/dashboard");
+        toast.success("Welcome back!", {
+          description: "Login successful. Redirecting to dashboard...",
+        });
+        setTimeout(() => navigate("/dashboard"), 1000);
       }
-    } catch (err) {
-      alert("Invalid credentials!");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      toast.error("Authentication Failed", {
+        description:
+          err.response?.data?.message || "Invalid email or password.",
+      });
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -98,12 +109,13 @@ const LoginForm = () => {
         </div>
 
         <button
+          disabled={loading}
           type="submit"
           className="w-full bg-linear-to-b from-[#2D6A4F] to-[#1B4332] text-white font-bold py-3.5 rounded-xl 
              transition-all duration-300 shadow-md hover:shadow-lg
              active:scale-[0.98] cursor-pointer"
         >
-          Sign In
+          {loading ? `Signin in...` : "Sign In"}
         </button>
       </form>
 

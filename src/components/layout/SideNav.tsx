@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 import {
   LayoutDashboard,
@@ -12,6 +13,7 @@ import {
   Shell,
   Award,
 } from "lucide-react";
+import { toast } from "sonner";
 
 // Menu items for the main navigation
 
@@ -53,6 +55,7 @@ interface SideNavProps {
 
 const SideNav = ({ onClose }: SideNavProps) => {
   const [activeItem, setActiveItem] = useState("Dashboard");
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col h-full justify-between bg-[#F8F9FA] rounded-xl p-2 xl:p-4">
@@ -143,6 +146,18 @@ const SideNav = ({ onClose }: SideNavProps) => {
                 <button
                   key={item.label}
                   onClick={() => {
+                    if (item.label === "Logout") {
+                      localStorage.removeItem("token");
+                      toast.success("Logged out!", {
+                        description: "Redirecting to login page...",
+                      });
+                      setTimeout(() => {
+                        navigate("/");
+                      }, 1000);
+                      onClose?.();
+                      return;
+                    }
+
                     setActiveItem(item.label);
 
                     onClose?.();

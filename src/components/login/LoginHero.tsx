@@ -23,7 +23,7 @@ const LoginHero = () => {
           <h1 className="text-2xl font-bold">Donezo</h1>
         </div>
 
-        <h2 className="text-5xl font-extrabold leading-tight mb-6">
+        <h2 className="text-2xl md:text-4xl xl:text-5xl font-extrabold leading-tight mb-6">
           Plan, prioritize, and accomplish your tasks with ease.
         </h2>
         <p className="text-lg text-gray-300 mb-10">
@@ -56,4 +56,3 @@ const LoginHero = () => {
 };
 
 export default LoginHero;
-
