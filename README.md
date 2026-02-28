@@ -5,6 +5,9 @@ A modern, single-page React application for task management, This project featur
 ## 🌟 Demo Video
 
 
+https://github.com/user-attachments/assets/7b72f782-ab0d-42e1-92e2-3f5120b2e38b
+
+
 ## 🚀 Tech Stack
 
 - **React 19** (with Vite)
