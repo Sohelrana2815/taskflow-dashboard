@@ -4,7 +4,6 @@ A modern, single-page React application for task management, This project featur
 
 ## 🌟 Demo Video
 
-[![Watch the Demo](https://raw.githubusercontent.com/your-username/taskflow-dashboard/main/assets/video-placeholder.png)](https://drive.google.com/file/d/1GNhhtlACiQzVdfybGU8Xo2Qvs6e49HMr/view?usp=sharing)
 
 ## 🚀 Tech Stack
 
