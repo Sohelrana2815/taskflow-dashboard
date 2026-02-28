@@ -164,7 +164,7 @@ const SideNav = ({ onClose }: SideNavProps) => {
       <div
         className="p-4 rounded-2xl text-white mt-6 relative overflow-hidden bg-cover bg-center"
         style={{
-          backgroundImage: `url('/ads.png')`,
+          backgroundImage: `url('/ads.webp')`,
         }}
       >
         <div className="bg-[#F8F9FA] w-8 h-8 rounded-full flex items-center justify-center mb-2 text-[#12372A]">
