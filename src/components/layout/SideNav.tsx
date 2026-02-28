@@ -76,7 +76,7 @@ const SideNav = ({ onClose }: SideNavProps) => {
             Menu
           </p>
 
-          <nav className="space-y-1">
+          <nav className="space-y-1 relative">
             {menuItems.map((item) => {
               const Icon = item.icon;
 
@@ -92,26 +92,33 @@ const SideNav = ({ onClose }: SideNavProps) => {
                   }}
                   className={`
 
-                    w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
-
-                    transition-all duration-200 cursor-pointer
-
+                 relative w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium  transition-all duration-200 cursor-pointer
                     ${
                       isActive
-                        ? "bg-[#1B4332] text-white shadow-md"
-                        : "text-gray-600 hover:bg-gray-100"
+                        ? "text-black font-bold"
+                        : "text-gray-500 hover:bg-gray-50 font-medium"
                     }
 
                   `}
                 >
-                  <Icon size={18} strokeWidth={isActive ? 2.2 : 1.8} />
+                  {isActive && (
+                    <span
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-[#1B4332] rounded-r-full"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <Icon
+                    size={20}
+                    className={isActive ? "text-[#1B4332]" : "text-gray-400"}
+                    strokeWidth={isActive ? 2.5 : 1.8}
+                  />
 
                   <span>{item.label}</span>
 
                   {/* Notification dot for Tasks */}
 
                   {item.hasNotification && (
-                    <span className="ml-auto w-5 h-5 bg-[#1B4332] text-[#FFFFFF] text-[10px] font-bold rounded-sm flex items-center justify-center">
+                    <span className="ml-auto px-1.5 py-0.5 bg-[#1B4332] text-white text-[10px] font-bold rounded-md flex items-center justify-center">
                       12+
                     </span>
                   )}
