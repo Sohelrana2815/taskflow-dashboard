@@ -1,13 +1,12 @@
 # Task Flow Dashboard
 
-A modern, single-page React application for task management, built for the Frontend Intern Dashboard Development Task. This project features a secure login system and a dynamic dashboard, closely following the provided design and integrating with a REST API.
+A modern, single-page React application for task management, This project features a secure login system and a dynamic dashboard, closely following the provided design and integrating with a REST API.
 
 ## 🌟 Screenshots
 
-<!-- Replace these URLs with your actual screenshot links -->
-![Login Page](https://your-cloud-url.com/login-screenshot.png)
-![Dashboard](https://your-cloud-url.com/dashboard-screenshot.png)
-![Analytics](https://your-cloud-url.com/analytics-screenshot.png)
+
+![Login Page](https://res.cloudinary.com/djmhyrvxd/image/upload/v1772272872/Screenshot_2026-02-28_155857_n2jpd4.png)
+![Dashboard](https://res.cloudinary.com/djmhyrvxd/image/upload/v1772272873/Screenshot_2026-02-28_155942_yqspwu.png)
 
 ## 🚀 Tech Stack
 
@@ -55,12 +54,14 @@ src/
 ## 📝 How to Use
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/your-username/taskflow-dashboard.git
    cd taskflow-dashboard
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    # or
@@ -68,6 +69,7 @@ src/
    ```
 
 3. **Start the development server**
+
    ```bash
    pnpm dev
    # or
@@ -75,6 +77,7 @@ src/
    ```
 
 4. **Build for production**
+
    ```bash
    pnpm build
    # or
@@ -106,18 +109,3 @@ src/
     "token": "<jwt_token>"
   }
   ```
-- Token is stored securely for session management and used for protected routes.
-
-## 📄 Task Details
-
-- [Dribbble Design](https://dribbble.com/shots/25241984-Task-Management-Dashboard)
-- [REST API](https://task-api-eight-flax.vercel.app/)
-- [Submission Form](https://forms.gle/j3mAyzzWA5vjcaQJ8)
-
-## 📬 Contact
-
-For any queries, reach out to: muntahi1212@gmail.com
-
-## 🕒 Submission Deadline
-
-**Feb 28, 2026 10:00 PM GMT+6**
