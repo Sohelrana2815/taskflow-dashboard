@@ -1,73 +1,123 @@
-# React + TypeScript + Vite
+# Task Flow Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, single-page React application for task management, built for the Frontend Intern Dashboard Development Task. This project features a secure login system and a dynamic dashboard, closely following the provided design and integrating with a REST API.
 
-Currently, two official plugins are available:
+## 🌟 Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- Replace these URLs with your actual screenshot links -->
+![Login Page](https://your-cloud-url.com/login-screenshot.png)
+![Dashboard](https://your-cloud-url.com/dashboard-screenshot.png)
+![Analytics](https://your-cloud-url.com/analytics-screenshot.png)
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** (with Vite)
+- **TypeScript**
+- **Tailwind CSS** (via @tailwindcss/vite)
+- **Framer Motion** (animations)
+- **React Router v7**
+- **Axios** (API calls)
+- **Lucide React & React Icons** (icons)
+- **Sonner** (notifications)
+- **ESLint** (code quality)
 
-## Expanding the ESLint configuration
+## 📁 Folder Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  assets/           # Images and static assets
+  components/
+    dashboard/      # Dashboard widgets & analytics
+    layout/         # Header, SideNav
+    login/          # Login form & hero
+  data/             # Static data
+  helpers/          # Utility functions
+  hooks/            # Custom React hooks
+  lib/              # Axios config
+  routes/           # App routes & protected route logic
+  services/         # API service layer
+  types/            # TypeScript types
+  index.css         # Global styles
+  main.tsx          # App entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✨ Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Login System:** Secure authentication using JWT tokens via REST API.
+- **Protected Dashboard:** Accessible only after login.
+- **Logout Functionality:** Easily log out and clear session.
+- **Modern UI:** Responsive, animated, and visually appealing.
+- **REST API Integration:** Real-time data fetching and display.
+- **Component-Based Structure:** Clean, maintainable code.
+- **Notifications:** User feedback for actions and errors.
+- **Responsive Design:** Works across devices and screen sizes.
 
-export default defineConfig([
-  globalIgnores(['dist']),
+## 📝 How to Use
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/taskflow-dashboard.git
+   cd taskflow-dashboard
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   # or
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   pnpm dev
+   # or
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   pnpm build
+   # or
+   npm run build
+   ```
+
+5. **Preview production build**
+   ```bash
+   pnpm preview
+   # or
+   npm run preview
+   ```
+
+## 🔒 Authentication
+
+- **Login Endpoint:** `POST /api/login`
+- **Body Example:**
+  ```json
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    "email": "user1@example.com",
+    "password": "password123"
+  }
+  ```
+- **Response:**
+  ```json
+  {
+    "id": 1,
+    "email": "user1@example.com",
+    "token": "<jwt_token>"
+  }
+  ```
+- Token is stored securely for session management and used for protected routes.
+
+## 📄 Task Details
+
+- [Dribbble Design](https://dribbble.com/shots/25241984-Task-Management-Dashboard)
+- [REST API](https://task-api-eight-flax.vercel.app/)
+- [Submission Form](https://forms.gle/j3mAyzzWA5vjcaQJ8)
+
+## 📬 Contact
+
+For any queries, reach out to: muntahi1212@gmail.com
+
+## 🕒 Submission Deadline
+
+**Feb 28, 2026 10:00 PM GMT+6**
